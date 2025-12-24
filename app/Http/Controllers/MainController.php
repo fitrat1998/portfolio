@@ -15,4 +15,9 @@ class MainController extends Controller
     {
         return view('self.about');
     }
+
+    public function services()
+    {
+        return view('self.services');
+    }
 }
