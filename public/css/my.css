@@ -1,0 +1,29 @@
+
+@media (max-width: 991px) {
+  /* Bu yerga mavjud .sidebar-collapsed qoidalarini joylang yoki ularni bu blok ichiga oling */
+  .admin-wrapper.sidebar-collapsed .admin-sidebar,
+  .admin-wrapper.sidebar-collapsed .sidebar-content {
+    transform: translateX(-100%); /* misol: collapseda sidebar yashirin bo'lishi */
+    width: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+  .admin-wrapper.sidebar-collapsed .admin-main {
+    margin-left: 0; /* content to'liq kenglikda bo'lsin */
+  }
+}
+
+/* DESKTOP uchun: agar .sidebar-collapsed bo'lsa ham visual tarzda uni bekor qilamiz */
+@media (min-width: 992px) {
+  .admin-wrapper.sidebar-collapsed .admin-sidebar,
+  .admin-wrapper.sidebar-collapsed .sidebar-content {
+    transform: none !important;
+    /*width: 240px !important; !* o'zingizning sidebar width bilan almashtiring *!*/
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  .admin-wrapper.sidebar-collapsed .admin-main {
+    /*margin-left: 240px !important; !* sidebar width bilan moslang *!*/
+  }
+}
