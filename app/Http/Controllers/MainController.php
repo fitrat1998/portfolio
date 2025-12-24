@@ -25,4 +25,14 @@ class MainController extends Controller
     {
         return view('self.404');
     }
+
+    public function testimonial()
+    {
+        return view('self.testimonial');
+    }
+
+    public function team()
+    {
+        return view('self.team');
+    }
 }

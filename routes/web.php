@@ -13,6 +13,8 @@ Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/services', [MainController::class, 'services'])->name('services'); 
 Route::get('/404', [MainController::class, 'notFound'])->name('notFound'); 
+Route::get('/testimonial', [MainController::class, 'testimonial'])->name('testimonial'); 
+Route::get('/team', [MainController::class, 'team'])->name('team'); 
 
 Route::middleware('auth')->group(function () {
     // Route::get('/', [HomeController::class, 'index'])->name('index');

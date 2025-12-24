@@ -29,8 +29,8 @@
                     <div class="dropdown-menu border-light m-0">
                         <a href="project.html" class="dropdown-item">Projects</a>
                         <a href="feature.html" class="dropdown-item">Features</a>
-                        <a href="team.html" class="dropdown-item">Team Member</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="{{ route('team') }}" class="dropdown-item">Team Member</a>
+                        <a href="{{ route('testimonial') }}" class="dropdown-item">Testimonial</a>
                         <a href="{{ route('notFound') }}" class="dropdown-item">404 Page</a>
                     </div>
                 </div>
