@@ -20,4 +20,9 @@ class MainController extends Controller
     {
         return view('self.services');
     }
+
+    public function notFound()
+    {
+        return view('self.404');
+    }
 }
