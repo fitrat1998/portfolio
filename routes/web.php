@@ -17,6 +17,7 @@ Route::get('/testimonial', [MainController::class, 'testimonial'])->name('testim
 Route::get('/team', [MainController::class, 'team'])->name('team'); 
 Route::get('/feature', [MainController::class, 'feature'])->name('feature'); 
 Route::get('/project', [MainController::class, 'project'])->name('project'); 
+Route::get('/contact', [MainController::class, 'contact'])->name('contact'); 
 
 Route::middleware('auth')->group(function () {
     // Route::get('/', [HomeController::class, 'index'])->name('index');

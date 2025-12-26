@@ -45,4 +45,9 @@ class MainController extends Controller
     {
         return view('self.project');
     }
+
+    public function contact()
+    {
+        return view('self.contact');
+    }
 }
