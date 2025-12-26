@@ -22,19 +22,19 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{ route('index') }}" class="nav-item nav-link {{ request()->routeIs('index') ? 'active' : '' }}">{{ __('local.home') }}</a>
-                <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">{{ __('local.about') }}</a>
-                <a href="{{ route('services') }}" class="nav-item nav-link {{ request()->routeIs('services') ? 'active' : '' }}">{{ __('local.services') }}</a>
+                <a href="{{ route('abouts.index') }}" class="nav-item nav-link {{ request()->routeIs('abouts.index') ? 'active' : '' }}">{{ __('local.about') }}</a>
+                <a href="{{ route('services.index') }}" class="nav-item nav-link {{ request()->routeIs('services.index') ? 'active' : '' }}">{{ __('local.services') }}</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('project','feature','team','testimonial','notFound') ? 'active' : '' }}" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('projects.index','features.index','teams.index','testimonials.index','notFounds.index') ? 'active' : '' }}" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu border-light m-0">
-                        <a href="{{ route('project') }}" class="dropdown-item {{ request()->routeIs('project') ? 'active' : '' }}">Projects</a>
-                        <a href="{{ route('feature') }}" class="dropdown-item {{ request()->routeIs('feature') ? 'active' : '' }}">Features</a>
-                        <a href="{{ route('team') }}" class="dropdown-item {{ request()->routeIs('team') ? 'active' : '' }}">Team Member</a>
-                        <a href="{{ route('testimonial') }}" class="dropdown-item {{ request()->routeIs('testimonial') ? 'active' : '' }}">Testimonial</a>
-                        <a href="{{ route('notFound') }}" class="dropdown-item {{ request()->routeIs('notFound') ? 'active' : '' }}">404 Page</a>
+                        <a href="{{ route('projects.index') }}" class="dropdown-item {{ request()->routeIs('projects.index') ? 'active' : '' }}">Projects</a>
+                        <a href="{{ route('features.index') }}" class="dropdown-item {{ request()->routeIs('features.index') ? 'active' : '' }}">Features</a>
+                        <a href="{{ route('teams.index') }}" class="dropdown-item {{ request()->routeIs('teams.index') ? 'active' : '' }}">Team Member</a>
+                        <a href="{{ route('testimonials.index') }}" class="dropdown-item {{ request()->routeIs('testimonials.index') ? 'active' : '' }}">Testimonial</a>
+                        <a href="{{ route('notfounds.index') }}" class="dropdown-item {{ request()->routeIs('notfounds.index') ? 'active' : '' }}">404 Page</a>
                     </div>
                 </div>
-                <a href="{{ route('contact') }}" class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">{{ __('local.contact') }}</a>
+                <a href="{{ route('contacts.index') }}" class="nav-item nav-link {{ request()->routeIs('contacts.index') ? 'active' : '' }}">{{ __('local.contact') }}</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle d-flex align-items-center" id="langDropdown">
                         🌐 {{ strtoupper(app()->getLocale()) }}

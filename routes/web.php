@@ -1,11 +1,19 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\NotFoundController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,14 +32,14 @@ Route::middleware('web')->group(function () {
 
 
 Route::get('/', [MainController::class, 'index'])->name('index');
-Route::get('/about', [MainController::class, 'about'])->name('about');
-Route::get('/services', [MainController::class, 'services'])->name('services');
-Route::get('/404', [MainController::class, 'notFound'])->name('notFound');
-Route::get('/testimonial', [MainController::class, 'testimonial'])->name('testimonial');
-Route::get('/team', [MainController::class, 'team'])->name('team');
-Route::get('/feature', [MainController::class, 'feature'])->name('feature');
-Route::get('/project', [MainController::class, 'project'])->name('project');
-Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+Route::resource('abouts', AboutController::class);
+Route::resource('services', ServiceController::class);
+Route::resource('notfounds', NotFoundController::class);
+Route::resource('testimonials', TestimonialController::class);
+Route::resource('teams', TeamController::class);
+Route::resource('features', FeatureController::class);
+Route::resource('projects', ProjectController::class);
+Route::resource('contacts', ContactController::class);
 
 Route::middleware('auth')->group(function () {
     // Route::get('/', [HomeController::class, 'index'])->name('index');
