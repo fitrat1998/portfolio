@@ -9,15 +9,29 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+Route::middleware('web')->group(function () {
+
+    Route::get('lang/{locale}', function ($locale) {
+        if (! in_array($locale, ['en', 'uz', 'ru'])) {
+            abort(400);
+        }
+
+        session(['locale' => $locale]);
+
+        return redirect()->back();
+    })->name('lang.switch');
+});
+
+
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [MainController::class, 'about'])->name('about');
-Route::get('/services', [MainController::class, 'services'])->name('services'); 
-Route::get('/404', [MainController::class, 'notFound'])->name('notFound'); 
-Route::get('/testimonial', [MainController::class, 'testimonial'])->name('testimonial'); 
-Route::get('/team', [MainController::class, 'team'])->name('team'); 
-Route::get('/feature', [MainController::class, 'feature'])->name('feature'); 
-Route::get('/project', [MainController::class, 'project'])->name('project'); 
-Route::get('/contact', [MainController::class, 'contact'])->name('contact'); 
+Route::get('/services', [MainController::class, 'services'])->name('services');
+Route::get('/404', [MainController::class, 'notFound'])->name('notFound');
+Route::get('/testimonial', [MainController::class, 'testimonial'])->name('testimonial');
+Route::get('/team', [MainController::class, 'team'])->name('team');
+Route::get('/feature', [MainController::class, 'feature'])->name('feature');
+Route::get('/project', [MainController::class, 'project'])->name('project');
+Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
 Route::middleware('auth')->group(function () {
     // Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -38,8 +52,6 @@ Route::middleware('auth')->group(function () {
         $token = $user->createToken('MyToken')->plainTextToken;
         return response()->json(['token' => $token]);
     });
-
-
 });
 
 require __DIR__ . '/auth.php';

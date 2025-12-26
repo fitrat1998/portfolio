@@ -21,9 +21,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ route('index') }}" class="nav-item nav-link {{ request()->routeIs('index') ? 'active' : '' }}">Home</a>
-                <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">About</a>
-                <a href="{{ route('services') }}" class="nav-item nav-link {{ request()->routeIs('services') ? 'active' : '' }}">Services</a>
+                <a href="{{ route('index') }}" class="nav-item nav-link {{ request()->routeIs('index') ? 'active' : '' }}">{{ __('local.home') }}</a>
+                <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">{{ __('local.about') }}</a>
+                <a href="{{ route('services') }}" class="nav-item nav-link {{ request()->routeIs('services') ? 'active' : '' }}">{{ __('local.services') }}</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('project','feature','team','testimonial','notFound') ? 'active' : '' }}" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu border-light m-0">
@@ -34,7 +34,18 @@
                         <a href="{{ route('notFound') }}" class="dropdown-item {{ request()->routeIs('notFound') ? 'active' : '' }}">404 Page</a>
                     </div>
                 </div>
-                <a href="{{ route('contact') }}" class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
+                <a href="{{ route('contact') }}" class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">{{ __('local.contact') }}</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle d-flex align-items-center" id="langDropdown">
+                        🌐 {{ strtoupper(app()->getLocale()) }}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end m-0" aria-labelledby="langDropdown">
+                        <a href="{{ route('lang.switch', 'en') }}" class="dropdown-item {{ app()->getLocale() == 'en' ? 'active' : '' }}">English</a>
+                        <a href="{{ route('lang.switch', 'uz') }}" class="dropdown-item {{ app()->getLocale() == 'uz' ? 'active' : '' }}">O‘zbekcha</a>
+                        <a href="{{ route('lang.switch', 'ru') }}" class="dropdown-item {{ app()->getLocale() == 'ru' ? 'active' : '' }}">Русский</a>
+                    </div>
+                </div>
+
             </div>
             <div class="d-none d-lg-flex ms-2">
                 <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
@@ -51,3 +62,23 @@
     </nav>
 </div>
 <!-- Navbar End -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownToggle = document.querySelector('#langDropdown');
+        const dropdownMenu = dropdownToggle.nextElementSibling;
+
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Agar dropdown ochiq bo‘lsa → yopish, aks holda ochish
+            dropdownMenu.classList.toggle('show');
+        });
+
+        // Boshqa joyga bosilganda yopish
+        document.addEventListener('click', function(e) {
+            if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    });
+</script>
