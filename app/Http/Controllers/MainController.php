@@ -35,4 +35,9 @@ class MainController extends Controller
     {
         return view('self.team');
     }
+
+    public function feature()
+    {
+        return view('self.feature');
+    }
 }
