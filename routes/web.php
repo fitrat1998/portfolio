@@ -16,6 +16,7 @@ Route::get('/404', [MainController::class, 'notFound'])->name('notFound');
 Route::get('/testimonial', [MainController::class, 'testimonial'])->name('testimonial'); 
 Route::get('/team', [MainController::class, 'team'])->name('team'); 
 Route::get('/feature', [MainController::class, 'feature'])->name('feature'); 
+Route::get('/project', [MainController::class, 'project'])->name('project'); 
 
 Route::middleware('auth')->group(function () {
     // Route::get('/', [HomeController::class, 'index'])->name('index');

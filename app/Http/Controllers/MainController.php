@@ -40,4 +40,9 @@ class MainController extends Controller
     {
         return view('self.feature');
     }
+
+    public function project()
+    {
+        return view('self.project');
+    }
 }
