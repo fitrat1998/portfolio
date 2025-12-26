@@ -60,6 +60,27 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('axror/js/main.js')}}"></script>
+    <!-- Owl Carousel JS Initialization -->
+<script>
+$(document).ready(function(){
+  $(".partners-carousel").owlCarousel({
+      loop:true,
+      margin:30,
+      autoplay:true,
+      autoplayTimeout:3000,
+      smartSpeed:800,
+      nav:false,
+      dots:true,
+      responsive:{
+          0:{ items:2 },
+          576:{ items:3 },
+          768:{ items:4 },
+          992:{ items:5 },
+          1200:{ items:6 }
+      }
+  });
+});
+</script>
 </body>
 
 </html>

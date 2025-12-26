@@ -472,6 +472,37 @@
 <!-- Projects End -->
 
 
+<!-- Partners Carousel Start -->
+<div class="container-xxl py-5 bg-light">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <!-- <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">// Hamkorlarimiz //</p> -->
+            <h3 class="display-5 mb-5">Bizning ishonchli hamkorlarimiz</h3>
+        </div>
+        <div class="owl-carousel partners-carousel wow fadeInUp" data-wow-delay="0.3s">
+            <div class="partner-item text-center pe-3">
+                <img class="img-fluid" src="{{asset('axror/img/service-1.jpg')}}" alt="Partner 1">
+            </div>
+            <div class="partner-item text-center pe-3">
+                <img class="img-fluid" src="{{asset('axror/img/service-1.jpg')}}" alt="Partner 2">
+            </div>
+            <div class="partner-item text-center pe-3">
+                <img class="img-fluid" src="{{asset('axror/img/service-1.jpg')}}" alt="Partner 3">
+            </div>
+            <div class="partner-item text-center pe-3">
+                <img class="img-fluid" src="{{asset('axror/img/service-1.jpg')}}" alt="Partner 4">
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Partners Carousel End -->
+
+
+
+
+
+
 <!-- Team Start -->
 <div class="container-xxl py-5">
     <div class="container">
