@@ -7,6 +7,7 @@ use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NotFoundController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
@@ -30,8 +31,15 @@ Route::middleware('web')->group(function () {
     })->name('lang.switch');
 });
 
+Route::get('/', function () {
+    if (auth()->check()) {
+        return app(HomeController::class)->index();
+    }
 
-Route::get('/', [MainController::class, 'index'])->name('index');
+    return app(MainController::class)->index();
+})->name('index');
+
+// Route::get('/', [MainController::class, 'index'])->name('index');
 Route::resource('abouts', AboutController::class);
 Route::resource('services', ServiceController::class);
 Route::resource('notfounds', NotFoundController::class);
@@ -49,6 +57,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('permissions', PermissionController::class);
 
     Route::resource('users', UserController::class);
+    Route::resource('pages', PageController::class);
 
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
