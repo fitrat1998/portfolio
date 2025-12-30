@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutBigImageController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ContactController;
@@ -60,6 +61,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('pages', PageController::class);
     Route::resource('headerimages', HeaderImageController::class);
+    Route::resource('aboutbigimages', AboutBigImageController::class);
 
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

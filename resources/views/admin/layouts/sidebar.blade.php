@@ -26,6 +26,40 @@
                     </a>
                 </li>
 
+
+
+                <!-- About Page -->
+
+                @php
+                $aboutBigImageStructureActive =
+                request()->is('aboutbigimages*');
+
+                @endphp
+
+                <li class="nav-item">
+                    <button
+                        class="menu-toggle nav-link d-flex align-items-center {{ $aboutBigImageStructureActive ? 'active' : '' }}"
+                        data-menu="aboutBigImageStructureMenu">
+                        <i class="bi bi-puzzle me-2"></i> About
+                        <i class="bi bi-chevron-down ms-auto"></i>
+                    </button>
+
+                    <div id="aboutBigImageStructureMenu" class="menu-collapse {{ $aboutBigImageStructureActive ? 'show' : '' }}">
+                        <ul class="nav nav-submenu flex-column ps-3">
+
+                            <li><a class="nav-link {{ request()->is('aboutbigimages*') ? 'active' : '' }}"
+                                    href="{{ route('roles.index') }}">
+                                Big Image
+                                </a>
+                            </li>
+
+
+
+
+                        </ul>
+                    </div>
+                </li>
+
                 <!-- 4) Tuzilma -->
                 @canany(['roles.show', 'permissions.show', 'users.show'])
                 @php
@@ -70,8 +104,6 @@
                     </div>
                 </li>
                 @endcanany
-
-
 
             </ul>
         </nav>
