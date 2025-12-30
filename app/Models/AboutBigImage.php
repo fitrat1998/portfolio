@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class AboutBigImage extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['page_id', 'image', 'title', 'desc'];
+
+    public function page()
+    {
+        return $this->belongsTo(Page::class);
+    }
 }

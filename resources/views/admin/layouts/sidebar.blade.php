@@ -40,7 +40,7 @@
                     <button
                         class="menu-toggle nav-link d-flex align-items-center {{ $aboutBigImageStructureActive ? 'active' : '' }}"
                         data-menu="aboutBigImageStructureMenu">
-                        <i class="bi bi-puzzle me-2"></i> About
+                        <i class="bi bi-info-circle"></i> About
                         <i class="bi bi-chevron-down ms-auto"></i>
                     </button>
 
@@ -48,7 +48,7 @@
                         <ul class="nav nav-submenu flex-column ps-3">
 
                             <li><a class="nav-link {{ request()->is('aboutbigimages*') ? 'active' : '' }}"
-                                    href="{{ route('roles.index') }}">
+                                    href="{{ route('aboutbigimages.index') }}">
                                 Big Image
                                 </a>
                             </li>
