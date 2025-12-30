@@ -40,9 +40,12 @@ class PageController extends Controller
             'page_name' => $validated['page_name'],
         ]);
 
-        return redirect()
-            ->route('pages.index')
-            ->with('success', 'Sahifa muvaffaqiyatli qo‘shildi');
+
+        return redirect()->route('pages.index')
+            ->with('toast', [
+                'type' => 'success', // success, error, info, warning
+                'message' => 'Sahifa muvaffaqiyatli qo\'shildi'
+            ]);
     }
 
     /**
@@ -75,9 +78,12 @@ class PageController extends Controller
             'page_name' => $validated['page_name'],
         ]);
 
-        return redirect()
-            ->route('pages.index')
-            ->with('success', 'Sahifa muvaffaqiyatli yangilandi');
+
+        return redirect()->route('pages.index')
+            ->with('toast', [
+                'type' => 'success', // success, error, info, warning
+                'message' => 'Sahifa muvaffaqiyatli yangilandi'
+            ]);
     }
 
     /**
@@ -87,8 +93,10 @@ class PageController extends Controller
     {
         $page->delete();
 
-        return redirect()
-            ->route('pages.index')
-            ->with('success', 'Sahifa muvaffaqiyatli o‘chirildi');
+        return redirect()->route('pages.index')
+            ->with('toast', [
+                'type' => 'success', // success, error, info, warning
+                'message' => 'Sahifa muvaffaqiyatli o\'chirildi'
+            ]);
     }
 }

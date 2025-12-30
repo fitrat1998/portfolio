@@ -19,6 +19,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('headerimages.index') ? 'active' : '' }}"
+                        href="{{ route('headerimages.index') }}">
+                        <i class="fas fa-image"></i> Header Images
+                    </a>
+                </li>
+
                 <!-- 4) Tuzilma -->
                 @canany(['roles.show', 'permissions.show', 'users.show'])
                 @php

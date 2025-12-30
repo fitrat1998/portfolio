@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class HeaderImage extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['page_id', 'header_image'];
+
+    public function page()
+    {
+        return $this->belongsTo(Page::class);
+    }
 }

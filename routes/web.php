@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\HeaderImageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NotFoundController;
@@ -58,6 +59,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('users', UserController::class);
     Route::resource('pages', PageController::class);
+    Route::resource('headerimages', HeaderImageController::class);
 
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
